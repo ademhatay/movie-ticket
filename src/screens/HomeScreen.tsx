@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text,  } from 'react-native';
-import { Screen } from '../components';
+import { Screen, Tabs } from '../components';
 
 const HomeScreen: React.FC = () => {
 	return <>
 		<Screen>
-			<Text>123</Text>
+			<Tabs />
 		</Screen>
 	</>
 }

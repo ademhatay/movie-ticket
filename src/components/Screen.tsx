@@ -8,7 +8,7 @@ interface Props {
 
 const Screen: React.FC<Props> = ({ children }) => {
 	return (
-		<View style={styles.container}>
+		<View className='bg-main' style={styles.container}>
 			{children}
 		</View>
 	);

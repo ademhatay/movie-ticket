@@ -11,7 +11,7 @@ interface TabButtonProps {
 const TabButton: React.FC<TabButtonProps> = ({ text, active }) => {
 	return <TouchableOpacity>
 		<View className={`w-24 h-6 flex-row justify-center items-center rounded-3xl`}>
-			<Text className={`font-barlow-medium text-base ${active ? 'text-primary' : 'text-gray-400'}`}>{text}</Text>
+			<Text className={`font-barlow-medium text-base ${active ? 'text-primary' : 'text-gray-300'}`}>{text}</Text>
 		</View>
 	</TouchableOpacity>
 };

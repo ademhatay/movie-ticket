@@ -6,3 +6,4 @@ export { default as Screen } from './Screen';
 export { default as Tabs } from './Tabs';
 export { default as ComingSoon } from './ComingSoon';
 export { default as FeaturedCard } from './FeaturedCard';
+export { default as CategoryList } from './Category/CategoryList';

@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text,  } from 'react-native';
-import { CategoryList, ComingSoon, Screen, Tabs } from '../components';
+import { CategoryList, ComingSoon, NowShowing, Screen, Tabs } from '../components';
 
 const HomeScreen: React.FC = () => {
 	return <>
@@ -8,6 +7,7 @@ const HomeScreen: React.FC = () => {
 			<Tabs />
 			<ComingSoon />
 			<CategoryList />
+			<NowShowing />
 		</Screen>
 	</>
 }

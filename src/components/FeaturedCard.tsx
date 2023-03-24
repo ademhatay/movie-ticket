@@ -9,12 +9,12 @@ interface FeaturedCardProps {
 }
 
 const FeaturedCard: React.FC<FeaturedCardProps> = ({ name, image, avaliable }) => {
-	
+
 
 	return <>
 		<TouchableWithoutFeedback>
-			<ImageBackground imageStyle={{ borderRadius: 12 }} source={{ uri: image }} className="w-[330px] h-[200px] justify-center self-center">
-				<View className='flex-1 bg-red-500 opacity-40 rounded-xl'></View>
+			<ImageBackground resizeMode='stretch' imageStyle={{ borderRadius: 12 }} source={{ uri: image }} className="w-[330px] h-[200px] justify-center self-center">
+				<View className='flex-1 bg-gray-500 opacity-50 rounded-xl'></View>
 				<View className='absolute top-3 left-3'>
 					<Text className='text-white text-base font-barlow-normal px-4 py-2'>{name}</Text>
 				</View>

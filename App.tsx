@@ -1,13 +1,13 @@
 import React from 'react';
-import { Home } from './src/screens';
-
-
+import TabNavigator from './src/routes/TabNavigator';
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
-	
 	return (
 		<>
-			<Home />
+			<NavigationContainer>
+				<TabNavigator />
+			</NavigationContainer>
 		</>
 	);
 };

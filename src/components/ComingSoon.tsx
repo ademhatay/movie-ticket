@@ -36,7 +36,7 @@ const movies: movieData[] = [
 
 const ComingSoon: React.FC = () => {
 	return <>
-		<View className='px-8 pt-8'>
+		<View className='px-8'>
 			<SectionTitle
 				title="Coming Soon"
 			/>

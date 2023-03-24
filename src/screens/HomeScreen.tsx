@@ -1,10 +1,9 @@
 import React from 'react';
-import { CategoryList, ComingSoon, NowShowing, Screen, Tabs } from '../components';
+import { CategoryList, ComingSoon, NowShowing, Screen } from '../components';
 
 const HomeScreen: React.FC = () => {
 	return <>
 		<Screen>
-			<Tabs />
 			<ComingSoon />
 			<CategoryList />
 			<NowShowing />

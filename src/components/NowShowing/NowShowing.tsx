@@ -74,18 +74,6 @@ const NowShowing: React.FC = () => {
 		);
 	};
 
-	const scrollNext = () => {
-		if (index < movies.length - 1) {
-			scrollToIndex(index + 1);
-		}
-	};
-
-	const scrollPrev = () => {
-		if (index > 0) {
-			scrollToIndex(index - 1);
-		}
-	};
-
 	return <>
 		<View className="mx-8">
 			<SectionTitle title="Now Showing" />
@@ -103,10 +91,10 @@ const NowShowing: React.FC = () => {
 			/>
 
 			<View className="absolute top-1/2 left-0 flex-row justify-between w-full mt-4">
-				{index !== 0 && <TouchableOpacity onPress={scrollPrev} className="ml-4 absolute left-0">
+				{index !== 0 && <TouchableOpacity className="ml-4 absolute left-0">
 					<MaterialIcons name="arrow-left" size={36} color="white" />
 				</TouchableOpacity>}
-				{index !== movies.length - 1 && <TouchableOpacity onPress={scrollNext} className="mr-4 absolute right-0">
+				{index !== movies.length - 1 && <TouchableOpacity className="mr-4 absolute right-0">
 					<MaterialIcons name="arrow-right" size={36} color="white" />
 				</TouchableOpacity>}
 			</View>

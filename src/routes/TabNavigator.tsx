@@ -12,9 +12,8 @@ function TabNavigator() {
 				tabBarLabelStyle: {
 					fontSize: 13,
 					color: '#fff',
-					fontFamily: 'Barlow-Medium-Medium'
+					fontFamily: 'Barlow-Medium-Medium',
 				},
-				tabBarItemStyle: {},
 				tabBarStyle: { 
 					backgroundColor: '#1E1F27',
 				},

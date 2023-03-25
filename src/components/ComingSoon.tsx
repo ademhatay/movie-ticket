@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { width } from '../config/constants';
 import FeaturedCard from './FeaturedCard';
 import SectionTitle from './SectionTitle';
 
@@ -51,6 +52,7 @@ const ComingSoon: React.FC = () => {
 				horizontal
 				showsHorizontalScrollIndicator={false}
 				ItemSeparatorComponent={() => <View className='w-10' />}
+				snapToInterval={width - 150}
 			/>
 		</View>
 	</>

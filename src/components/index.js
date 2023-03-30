@@ -8,3 +8,4 @@ export { default as ComingSoon } from './ComingSoon';
 export { default as FeaturedCard } from './FeaturedCard';
 export { default as CategoryList } from './Category/CategoryList';
 export { default as NowShowing } from './NowShowing/NowShowing';
+export { default as BottomSheet } from './BottomSheet/';

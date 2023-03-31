@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, FlatList, Image, TouchableOpacity, Dimensions } from "react-native";
 import SectionTitle from "../SectionTitle";
+import { useGeneralContext } from "../../contexts/GeneralContext";
+
 
 const { width } = Dimensions.get('window');
 const wither = width / 1.2;
@@ -46,15 +48,25 @@ const movies: Movie[] = [
 ];
 
 
+
+
 const NowShowing: React.FC = () => {
 
+	const { showModal, setShowModal } = useGeneralContext();
+
+	const [item, setItem] = useState<Movie>();
+
 	const renderItem = ({ item }: { item: Movie }) => {
+
+		const onPress = () => {
+			setItem(item);
+			setShowModal(true);
+		};
+
 		return <>
 			<View className="flex-col">
 				<TouchableOpacity
-					onPress={() => {
-						console.log("Pressed");
-					}}
+					onPress={onPress}
 					className="items-center">
 					<Image
 						resizeMode="cover"
@@ -83,6 +95,7 @@ const NowShowing: React.FC = () => {
 			</View>
 		</>
 	};
+
 
 	return <>
 		<View className="mx-8">

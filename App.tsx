@@ -25,26 +25,13 @@ const App = () => {
 
 
 	return (
-		<View style={{ backgroundColor: 'red', flex: 1 }}>
-			<Provider>
-				<GestureHandlerRootView style={{ flex: 1 }}>
-					{/* <NavigationContainer>
+		<Provider>
+			<GestureHandlerRootView style={{ flex: 1 }}>
+				<NavigationContainer>
 					<TabNavigator />
-				</NavigationContainer> */}
-					<BottomSheet
-						ref={bottomSheetRef}
-						index={1}
-						snapPoints={snapPoints}
-						onChange={handleSheetChanges}
-						enablePanDownToClose={true}
-					>
-						<View style={styles.contentContainer}>
-							<Text>Awesome 🎉</Text>
-						</View>
-					</BottomSheet>
-				</GestureHandlerRootView>
-			</Provider>
-		</View>
+				</NavigationContainer>
+			</GestureHandlerRootView>
+		</Provider>
 	);
 };
 

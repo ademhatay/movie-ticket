@@ -18,7 +18,7 @@ const TabButton: React.FC<TabButtonProps> = ({ text, active }) => {
 
 const Tabs: React.FC = () => {
 	return <>
-		<View className='w-full h-6 flex-row justify-evenly px-10'>
+		<View className='w-full h-4 flex-row justify-evenly px-10'>
 			<TabButton text='All Movies' active />
 			<TabButton text='For Kids'  />
 			<TabButton text='My Tickets' />

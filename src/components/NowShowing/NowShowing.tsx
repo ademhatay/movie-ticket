@@ -75,7 +75,7 @@ const NowShowing: React.FC = () => {
 					/>
 
 
-					<View className="justify-center items-center mt-4">
+					<View className="justify-center items-center">
 						<Text className="text-white font-barlow-medium text-base">
 							{
 								item.title.length > 15

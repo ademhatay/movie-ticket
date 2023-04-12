@@ -20,7 +20,7 @@ const CategoryList: React.FC = () => {
 	const [activeCategory, setActiveCategory] = useState<string>(categories[0]);
 
 	return <>
-		<View className='flex-row justify-center items-center my-7 mx-2'>
+		<View className='flex-row justify-center items-center mt-3 mx-2'>
 			<ScrollView horizontal showsHorizontalScrollIndicator={false}>
 				{categories.map((category, index) => {
 					return <CategoryItem

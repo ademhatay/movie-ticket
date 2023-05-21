@@ -60,7 +60,12 @@ const NowShowing: React.FC = () => {
 
 		const onPress = () => {
 			setItem(item);
-			setShowModal(true);
+
+			setShowModal(!showModal);
+			console.log({
+				showModal,
+				item
+			});
 		};
 
 		return <>

@@ -6,10 +6,13 @@ const Context = createContext();
 const Provider = ({ children }) => {
 
 	const [showModal, setShowModal] = useState(false);
+	const [item, setItem] = useState();
 
 	const data = {
 		showModal,
 		setShowModal,
+		item,
+		setItem
 	};
 
 	return <Context.Provider value={data}>{children}</Context.Provider>;

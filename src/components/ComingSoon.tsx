@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { width } from '../config/constants';
 import FeaturedCard from './FeaturedCard';
 import SectionTitle from './SectionTitle';
+import AppModal from './AppModal';
+import { useGeneralContext } from '../contexts/GeneralContext';
 
 
 type movieData = {
@@ -41,9 +43,17 @@ const movies: movieData[] = [
 	}
 ];
 
-		
+
 
 const ComingSoon: React.FC = () => {
+	const { showModal, setShowModal, item, setItem } = useGeneralContext();
+
+	const onPress = (item: movieData) => {
+		setItem(item);
+
+		setShowModal(true);
+	}
+
 	return <>
 		<View className='px-8'>
 			<SectionTitle
@@ -52,6 +62,7 @@ const ComingSoon: React.FC = () => {
 			<FlatList
 				data={movies}
 				renderItem={({ item }) => <FeaturedCard
+					onPress={() => onPress(item)}
 					name={item.title}
 					image={item.poster_path}
 					avaliable={item.avaliable}
@@ -63,6 +74,7 @@ const ComingSoon: React.FC = () => {
 				snapToInterval={width - 150}
 			/>
 		</View>
+		<AppModal visible={showModal} item={item} onClose={() => setShowModal(false)} />
 	</>
 };
 

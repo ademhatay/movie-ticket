@@ -9,7 +9,7 @@ const { width } = Dimensions.get('window');
 const wither = width / 1.2;
 const ITEM_WIDTH = wither
 
-type Movie = {
+type movieData = {
 	id: number;
 	title: string;
 	poster_path: string;
@@ -18,7 +18,7 @@ type Movie = {
 	avaliable: boolean;
 };
 
-const movies: Movie[] = [
+const movies: movieData[] = [
 	{
 		id: 1,
 		title: "SpiderMan: Far From Home",
@@ -58,11 +58,10 @@ const movies: Movie[] = [
 
 const NowShowing: React.FC = () => {
 
-	const { showModal, setShowModal } = useGeneralContext();
+	const { showModal, setShowModal, item, setItem } = useGeneralContext();
 
-	const [item, setItem] = useState<Movie>();
 
-	const renderItem = ({ item }: { item: Movie }) => {
+	const renderItem = ({ item }: { item: movieData }) => {
 
 		const onPress = () => {
 			setItem(item);

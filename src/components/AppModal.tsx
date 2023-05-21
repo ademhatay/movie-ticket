@@ -9,7 +9,7 @@ interface ModalProps {
 
 const AppModal: React.FC<ModalProps> = ({ visible, onClose, item }) => {
 	return (
-		<Modal visible={visible} animationType="slide" transparent={true}>
+		<Modal visible={visible} animationType="fade" transparent={true}>
 			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.5)' }}>
 				<View style={{ backgroundColor: 'white', padding: 20, borderRadius: 14 }}>
 					<Text>{

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, FlatList, Image, TouchableOpacity, Dimensions } from "react-native";
 import SectionTitle from "../SectionTitle";
 import { useGeneralContext } from "../../contexts/GeneralContext";
+import AppModal from "../AppModal";
 
 
 const { width } = Dimensions.get('window');
@@ -14,6 +15,7 @@ type Movie = {
 	poster_path: string;
 	rating: number;
 	tags: string[];
+	avaliable: boolean;
 };
 
 const movies: Movie[] = [
@@ -23,6 +25,7 @@ const movies: Movie[] = [
 		poster_path: "https://image.tmdb.org/t/p/w500/rjbNpRMoVvqHmhmksbokcyCr7wn.jpg",
 		rating: 7.5,
 		tags: ["Action", "Adventure", "Science Fiction"],
+		avaliable: true,
 	},
 	{
 		id: 2,
@@ -30,6 +33,7 @@ const movies: Movie[] = [
 		poster_path: "https://image.tmdb.org/t/p/w500/2bXbqYdUdNVa8VIWXVfclP2ICtT.jpg",
 		rating: 7.1,
 		tags: ["Adventure", "Animation", "Drama"],
+		avaliable: false,
 	},
 	{
 		id: 3,
@@ -37,6 +41,7 @@ const movies: Movie[] = [
 		poster_path: "https://image.tmdb.org/t/p/w500/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
 		rating: 7.4,
 		tags: ["Action", "Adventure", "Science Fiction"],
+		avaliable: true,
 	},
 	{
 		id: 4,
@@ -44,6 +49,7 @@ const movies: Movie[] = [
 		poster_path: "https://image.tmdb.org/t/p/w500/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg",
 		rating: 8.7,
 		tags: ["Adventure", "Drama", "Fantasy"],
+		avaliable: true,
 	},
 ];
 
@@ -61,11 +67,7 @@ const NowShowing: React.FC = () => {
 		const onPress = () => {
 			setItem(item);
 
-			setShowModal(!showModal);
-			console.log({
-				showModal,
-				item
-			});
+			setShowModal(true);
 		};
 
 		return <>
@@ -115,6 +117,8 @@ const NowShowing: React.FC = () => {
 				ItemSeparatorComponent={() => <View className="w-8" />}
 			/>
 		</View>
+
+		<AppModal visible={showModal} item={item} onClose={() => setShowModal(false)} />
 	</>
 };
 

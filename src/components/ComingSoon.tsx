@@ -7,29 +7,37 @@ import SectionTitle from './SectionTitle';
 
 type movieData = {
 	id: number;
-	name: string;
-	image: string;
+	title: string;
+	poster_path: string;
+	rating: number;
+	tags: string[];
 	avaliable: boolean;
 }
 
 const movies: movieData[] = [
 	{
 		id: 1,
-		name: 'The Batman',
-		image: 'https://i.insider.com/62225ce7dcce010019a6def1?width=800&format=jpeg&auto=webp',
-		avaliable: true
+		title: 'The Batman',
+		poster_path: 'https://i.insider.com/62225ce7dcce010019a6def1?width=800&format=jpeg&auto=webp',
+		avaliable: true,
+		tags: ['Action', 'Adventure', 'Crime'],
+		rating: 8.7
 	},
 	{
 		id: 2,
-		name: 'Avatar 2',
-		image: 'https://tr.web.img4.acsta.net/pictures/22/12/12/07/34/4691827.jpg',
-		avaliable: false
+		title: 'Avatar 2',
+		poster_path: 'https://tr.web.img4.acsta.net/pictures/22/12/12/07/34/4691827.jpg',
+		avaliable: false,
+		tags: ['Action', 'Adventure', 'Fantasy'],
+		rating: 8.7
 	},
 	{
 		id: 3,
-		name: 'San Andreas',
-		image: 'https://m.media-amazon.com/images/M/MV5BNzZhYmQ2NGMtZmRmYi00NzgzLTllNmUtNDQwZDAxMmE3NzI0XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg',
+		title: 'San Andreas',
+		poster_path: 'https://m.media-amazon.com/images/M/MV5BNzZhYmQ2NGMtZmRmYi00NzgzLTllNmUtNDQwZDAxMmE3NzI0XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg',
 		avaliable: true,
+		tags: ['Action', 'Adventure', 'Drama'],
+		rating: 8.7
 	}
 ];
 
@@ -44,8 +52,8 @@ const ComingSoon: React.FC = () => {
 			<FlatList
 				data={movies}
 				renderItem={({ item }) => <FeaturedCard
-					name={item.name}
-					image={item.image}
+					name={item.title}
+					image={item.poster_path}
 					avaliable={item.avaliable}
 				/>}
 				keyExtractor={item => item.id.toString()}
